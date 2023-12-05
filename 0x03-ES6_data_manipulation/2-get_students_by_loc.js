@@ -1,6 +1,6 @@
-export default function getStudentIdsSum(studentObjects) {
+export default function getStudentsByLocation(studentObjects, city) {
   if (Array.isArray(studentObjects) === false) {
-    return 0;
+    return [];
   }
-  return studentObjects.reduce((sumIds, student) => sumIds + student.id, 0);
+  return studentObjects.filter((student) => (student.location === city));
 }
